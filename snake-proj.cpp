@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include<conio.h>
 using namespace std;
 
 bool youLose;
@@ -43,7 +44,7 @@ void Draw() {
 				cout << "O";
 
 			else if (i == getY && j == getX)
-				cout << "F";
+				cout << "M";
 
 			else
 				cout << " ";
@@ -58,14 +59,35 @@ void Draw() {
 		cout << "#";
 	cout << endl;
 
+	cout << "SCORE: " << score << endl;
+
 }
 
 void Input() {
-
+	if (_kbhit())
+	{
+		switch (_getch()) {
+		case 'q':
+			youLose = true;
+			break;
+		case 'a':
+			mov = LEFT;
+			break;
+		case 'd':
+			mov = RIGHT;
+			break;
+		case 'w':
+			mov = UP;
+			break;
+		case 's':
+			mov = DOWN;
+			break;
+		}
+	}
 }
 
 void Code() {
-
+	
 }
 
 
